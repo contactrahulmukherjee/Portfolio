@@ -3,155 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Mukherjee | Portfolio</title>
+<title>Rahul Mukherjee</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0e0e0e;color:#fff;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-.container{width:90%;max-width:1200px;margin:auto}
-header{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px}
-.logo{font-weight:800;font-size:20px}
-.nav-links a{margin-left:30px;cursor:pointer;transition:0.3s}
-.nav-links a:hover{color:#aaa}
-section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:100px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#0a0a0a;color:#fff}
+section{min-height:100vh;padding:80px 10%;display:flex;flex-direction:column;justify-content:center}
+h1{font-size:64px;font-weight:800}
+h2{font-size:36px;margin-bottom:20px}
+p{color:#aaa;max-width:700px;line-height:1.6}
 .hero{text-align:center}
-.hero h1{font-size:60px;font-weight:800}
-.hero p{margin-top:20px;color:#aaa}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:60px}
-.card{border:1px solid #222;padding:40px;border-radius:20px;cursor:pointer;transition:0.4s}
-.card:hover{background:#111;transform:translateY(-10px)}
-.section-title{font-size:40px;font-weight:700;margin-bottom:40px;text-align:center}
-.hidden{display:none}
-.resume-content, .portfolio-content{max-width:900px;margin:auto}
-.resume-content h2{margin-bottom:10px}
-.resume-content p{color:#aaa;margin-bottom:20px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.gallery img{width:100%;border-radius:10px;cursor:pointer;transition:0.3s}
-.gallery img:hover{transform:scale(1.05)}
-.video-links a{display:block;margin-bottom:10px;color:#ccc}
-.video-links a:hover{color:#fff}
-.back-btn{margin-top:40px;display:inline-block;padding:10px 20px;border:1px solid #fff;border-radius:10px;cursor:pointer}
-.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:2000}
+.scroll{margin-top:30px;color:#666}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:40px}
+.card{padding:25px;border:1px solid #222;border-radius:16px;background:#111;transition:.3s}
+.card:hover{transform:translateY(-8px);background:#181818}
+.timeline{border-left:2px solid #333;padding-left:20px;margin-top:30px}
+.timeline div{margin-bottom:25px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:30px}
+.gallery img{width:100%;border-radius:8px;cursor:pointer}
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.9)}
 .lightbox img{max-width:90%;max-height:90%}
+a{color:#ccc;text-decoration:none}
+a:hover{color:#fff}
+.fade{opacity:0;transform:translateY(40px)}
 </style>
 </head>
 <body>
-<header>
-<nav class="container">
-<div class="logo">Rahul Mukherjee</div>
-<div class="nav-links">
-<a onclick="showSection('home')">Home</a>
-<a onclick="showSection('resume')">Resume</a>
-<a onclick="showSection('portfolio')">Portfolio</a>
-<a onclick="showSection('links')">Links</a>
-</div>
-</nav>
-</header>
 
-<section id="home" class="hero">
-<div class="container">
+<section class="hero">
 <h1>Rahul Mukherjee</h1>
 <p>Project Manager | Filmmaker | Photographer</p>
-<div class="cards">
-<div class="card" onclick="showSection('resume')">
-<h2>Resume</h2>
-<p>View professional experience and achievements</p>
-</div>
-<div class="card" onclick="showSection('portfolio')">
-<h2>Portfolio</h2>
-<p>Photography & filmmaking work</p>
-</div>
-<div class="card" onclick="showSection('links')">
-<h2>External Links</h2>
-<p>Connect and explore more</p>
-</div>
-</div>
-</div>
+<div class="scroll">Scroll</div>
 </section>
 
-<section id="resume" class="hidden">
-<div class="container resume-content">
-<div class="section-title">Resume</div>
-<h2>Download Resume</h2>
-<p><a href="Rahul_Mukherjee_Resume.pdf" target="_blank">Open Resume PDF</a></p>
+<section>
+<h2>About</h2>
+<p class="fade">4+ years managing large-scale supply chain and traceability programs alongside creative work in filmmaking and photography. Combines structured execution with visual storytelling.</p>
+</section>
 
-<h2>Professional Summary</h2>
-<p>Project Manager with 4+ years of experience delivering technology-driven supply chain and retail programs, including global traceability initiatives covering 26M+ units.</p>
-
+<section>
 <h2>Experience</h2>
-<p><strong>TextileGenesis</strong> - Associate Project Lead</p>
-<p><strong>PUMA Group</strong> - Internship</p>
-<p><strong>Reliance Brands</strong> - Internship</p>
-
-<div class="back-btn" onclick="showSection('home')">Back</div>
+<div class="timeline fade">
+<div><strong>TextileGenesis</strong><br><span>Associate Project Lead</span><p>Led global traceability programs across 26M+ units.</p></div>
+<div><strong>PUMA</strong><br><span>Internship</span><p>Supply chain visibility and coordination.</p></div>
+<div><strong>Reliance Brands</strong><br><span>Internship</span><p>Retail operations exposure.</p></div>
 </div>
 </section>
 
-<section id="portfolio" class="hidden">
-<div class="container portfolio-content">
-<div class="section-title">Portfolio</div>
-
-<h2>Photography</h2>
-<div class="gallery">
-<img src="Photo 1.jpg" onclick="openLightbox(this.src)">
-<img src="Photo 2.JPG" onclick="openLightbox(this.src)">
-<img src="Photo 3.JPG" onclick="openLightbox(this.src)">
-<img src="Photo 4.jpg" onclick="openLightbox(this.src)">
-<img src="Photo 5.JPG" onclick="openLightbox(this.src)">
-<img src="Photo 6.JPG" onclick="openLightbox(this.src)">
-<img src="Photo 7.jpg" onclick="openLightbox(this.src)">
-<img src="Photo 8.JPG" onclick="openLightbox(this.src)">
-<img src="Photo 9.JPEG" onclick="openLightbox(this.src)">
-<img src="Photo 10.JPG" onclick="openLightbox(this.src)">
+<section>
+<h2>Creative</h2>
+<div class="grid fade">
+<div class="card"><h3>Photography</h3><p>Cinematic visual storytelling.</p></div>
+<div class="card"><h3>Filmmaking</h3><p>Short films with narrative depth.</p></div>
+<div class="card"><h3>Concept</h3><p>Abstract to visual execution.</p></div>
 </div>
+</section>
 
-<h3 style="margin-top:30px">Photoshoot Calendar</h3>
-<p><a href="Photoshoot_Calander.pdf" target="_blank">View PDF</a></p>
+<section>
+<h2>Photography</h2>
+<div class="gallery fade">
+<img src="Photo 1.jpg" onclick="openLB(this.src)">
+<img src="Photo 2.JPG" onclick="openLB(this.src)">
+<img src="Photo 3.JPG" onclick="openLB(this.src)">
+<img src="Photo 4.jpg" onclick="openLB(this.src)">
+<img src="Photo 5.JPG" onclick="openLB(this.src)">
+<img src="Photo 6.JPG" onclick="openLB(this.src)">
+<img src="Photo 7.jpg" onclick="openLB(this.src)">
+<img src="Photo 8.JPG" onclick="openLB(this.src)">
+<img src="Photo 9.JPEG" onclick="openLB(this.src)">
+<img src="Photo 10.JPG" onclick="openLB(this.src)">
+</div>
+<p><a href="Photoshoot_Calander.pdf" target="_blank">View Photoshoot Calendar</a></p>
+</section>
 
-<h2 style="margin-top:40px">Films</h2>
-<div class="video-links">
-<a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">Main Channel</a>
-<a href="https://youtu.be/L_6aET73AFY" target="_blank">Yakshaprashna</a>
-<a href="https://youtu.be/MTrPs2Vs6Y8" target="_blank">Caged</a>
-<a href="https://youtu.be/Mt5P1a5Fcb8" target="_blank">Sakha Twameva</a>
+<section>
+<h2>Films</h2>
+<div class="fade">
+<a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">Main Channel</a><br>
+<a href="https://youtu.be/L_6aET73AFY" target="_blank">Yakshaprashna</a><br>
+<a href="https://youtu.be/MTrPs2Vs6Y8" target="_blank">Caged</a><br>
+<a href="https://youtu.be/Mt5P1a5Fcb8" target="_blank">Sakha Twameva</a><br>
 <a href="https://youtu.be/ARitORMdvNY" target="_blank">Quagmire</a>
 </div>
-
-<div class="back-btn" onclick="showSection('home')">Back</div>
-</div>
 </section>
 
-<section id="links" class="hidden">
-<div class="container">
-<div class="section-title">External Links</div>
-<p><a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">YouTube Channel</a></p>
-<p><a href="#">LinkedIn</a></p>
-<p><a href="#">Instagram</a></p>
-
-<div class="back-btn" onclick="showSection('home')">Back</div>
-</div>
+<section>
+<h2>Resume</h2>
+<p class="fade">Detailed breakdown of projects and experience.</p>
+<a href="Rahul_Mukherjee_Resume.pdf" target="_blank">Open Resume</a>
 </section>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img" src="">
-</div>
+<div class="lightbox" id="lb" onclick="this.style.display='none'"><img id="lbimg"></div>
 
 <script>
-function showSection(sectionId){
-document.querySelectorAll('section').forEach(sec=>sec.classList.add('hidden'));
-document.getElementById(sectionId).classList.remove('hidden');
-window.scrollTo(0,0);
-}
+gsap.registerPlugin(ScrollTrigger);
 
-function openLightbox(src){
-document.getElementById('lightbox').style.display='flex';
-document.getElementById('lightbox-img').src=src;
-}
+gsap.utils.toArray('.fade').forEach(el=>{
+gsap.fromTo(el,{opacity:0,y:50},{opacity:1,y:0,duration:1,scrollTrigger:{trigger:el,start:"top 85%"}})
+})
 
-function closeLightbox(){
-document.getElementById('lightbox').style.display='none';
+function openLB(src){
+document.getElementById('lb').style.display='flex';
+document.getElementById('lbimg').src=src;
 }
 </script>
 
