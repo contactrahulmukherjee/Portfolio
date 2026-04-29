@@ -3,111 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Mukherjee</title>
+<title>Rahul Mukherjee | Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-body{background:#0a0a0a;color:#fff}
-section{min-height:100vh;padding:80px 10%;display:flex;flex-direction:column;justify-content:center}
-h1{font-size:64px;font-weight:800}
-h2{font-size:36px;margin-bottom:20px}
-p{color:#aaa;max-width:700px;line-height:1.6}
-.hero{text-align:center}
-.scroll{margin-top:30px;color:#666}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:40px}
-.card{padding:25px;border:1px solid #222;border-radius:16px;background:#111;transition:.3s}
-.card:hover{transform:translateY(-8px);background:#181818}
+body{background:#050505;color:#fff;overflow-x:hidden}
+
+.nav{position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:30px;padding:18px;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);z-index:1000}
+.nav a{color:#aaa;cursor:pointer;transition:.3s}
+.nav a:hover{color:#fff}
+
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at center,#111 0%,#050505 80%)}
+.hero h1{font-size:80px;font-weight:800;letter-spacing:-2px}
+.hero p{color:#888;margin-top:10px}
+
+section{min-height:100vh;padding:100px 10%;display:flex;flex-direction:column;justify-content:center}
+h2{font-size:42px;margin-bottom:20px}
+p{color:#aaa;max-width:800px;line-height:1.7}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+
+.card{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:16px;overflow:hidden;transition:.4s;cursor:pointer}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-label{padding:12px;font-size:14px;color:#bbb;text-align:center}
+
 .timeline{border-left:2px solid #333;padding-left:20px;margin-top:30px}
 .timeline div{margin-bottom:25px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:30px}
-.gallery img{width:100%;border-radius:8px;cursor:pointer}
-.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.9)}
-.lightbox img{max-width:90%;max-height:90%}
-a{color:#ccc;text-decoration:none}
-a:hover{color:#fff}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;cursor:pointer;transition:.3s}
+.gallery img:hover{transform:scale(1.05)}
+
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.95);z-index:2000}
+.lightbox iframe,.lightbox img{max-width:90%;max-height:90%}
+
 .fade{opacity:0;transform:translateY(40px)}
 </style>
 </head>
 <body>
 
+<div class="nav">
+<a href="#about">About</a>
+<a href="#resume">Resume</a>
+<a href="#achievements">Achievements</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#links">Links</a>
+</div>
+
 <section class="hero">
 <h1>Rahul Mukherjee</h1>
 <p>Project Manager | Filmmaker | Photographer</p>
-<div class="scroll">Scroll</div>
 </section>
 
-<section>
+<section id="about">
 <h2>About</h2>
-<p class="fade">4+ years managing large-scale supply chain and traceability programs alongside creative work in filmmaking and photography. Combines structured execution with visual storytelling.</p>
+<p class="fade">Project Manager with 4+ years of experience delivering global traceability programs across 26M+ units. Blends structured execution with cinematic storytelling through photography and film direction.</p>
 </section>
 
-<section>
-<h2>Experience</h2>
+<section id="resume">
+<h2>Resume Timeline</h2>
 <div class="timeline fade">
-<div><strong>TextileGenesis</strong><br><span>Associate Project Lead</span><p>Led global traceability programs across 26M+ units.</p></div>
-<div><strong>PUMA</strong><br><span>Internship</span><p>Supply chain visibility and coordination.</p></div>
-<div><strong>Reliance Brands</strong><br><span>Internship</span><p>Retail operations exposure.</p></div>
+<div><strong>TextileGenesis</strong> - Associate Project Lead</div>
+<div><strong>PUMA Group</strong> - Internship</div>
+<div><strong>Reliance Brands</strong> - Internship</div>
+<div><strong>NIFT</strong> - Masters of Fashion Management</div>
+<div><strong>B.Com</strong> - Commerce</div>
 </div>
-</section>
 
-<section>
-<h2>Creative</h2>
+<h2 style="margin-top:60px">Certificates</h2>
 <div class="grid fade">
-<div class="card"><h3>Photography</h3><p>Cinematic visual storytelling.</p></div>
-<div class="card"><h3>Filmmaking</h3><p>Short films with narrative depth.</p></div>
-<div class="card"><h3>Concept</h3><p>Abstract to visual execution.</p></div>
+<div class="card" onclick="openFile('./certs/pmp.jpg')">
+<img src="./certs/pmp.jpg">
+<div class="card-label">PMP - Google</div>
+</div>
+<div class="card" onclick="openFile('./certs/sustainability.jpg')">
+<img src="./certs/sustainability.jpg">
+<div class="card-label">Sustainable Fashion</div>
+</div>
+<div class="card" onclick="openFile('./certs/google.jpg')">
+<img src="./certs/google.jpg">
+<div class="card-label">Google Scholarship</div>
+</div>
+</div>
+
+<p style="margin-top:20px"><a href="Rahul_Mukherjee_Resume.pdf" target="_blank">Download Resume</a></p>
+</section>
+
+<section id="achievements">
+<h2>Achievements</h2>
+<div class="grid fade">
+<div class="card" onclick="openFile('./certs/nift1.jpg')"><img src="./certs/nift1.jpg"><div class="card-label">NIFT Training</div></div>
+<div class="card" onclick="openFile('./certs/nift2.jpg')"><img src="./certs/nift2.jpg"><div class="card-label">NIFT Workshop</div></div>
+<div class="card" onclick="openFile('./certs/photo.jpg')"><img src="./certs/photo.jpg"><div class="card-label">Photography Award</div></div>
+<div class="card" onclick="openFile('./certs/film.jpg')"><img src="./certs/film.jpg"><div class="card-label">Film Making Award</div></div>
+<div class="card" onclick="openFile('./certs/pmkvy.jpg')"><img src="./certs/pmkvy.jpg"><div class="card-label">PMKVY</div></div>
+<div class="card" onclick="openFile('./certs/jio.jpg')"><img src="./certs/jio.jpg"><div class="card-label">JIO</div></div>
+<div class="card" onclick="openFile('./certs/rotaract.jpg')"><img src="./certs/rotaract.jpg"><div class="card-label">Rotaract</div></div>
+<div class="card" onclick="openFile('./certs/mumbai.jpg')"><img src="./certs/mumbai.jpg"><div class="card-label">Best Cinematographer</div></div>
+<div class="card" onclick="openFile('./certs/nshm.jpg')"><img src="./certs/nshm.jpg"><div class="card-label">NSHM Runner Up</div></div>
+<div class="card" onclick="openFile('./certs/digit.jpg')"><img src="./certs/digit.jpg"><div class="card-label">Digit Reviewer</div></div>
 </div>
 </section>
 
-<section>
+<section id="portfolio">
 <h2>Photography</h2>
 <div class="gallery fade">
-<img src="Photo 1.jpg" onclick="openLB(this.src)">
-<img src="Photo 2.JPG" onclick="openLB(this.src)">
-<img src="Photo 3.JPG" onclick="openLB(this.src)">
-<img src="Photo 4.jpg" onclick="openLB(this.src)">
-<img src="Photo 5.JPG" onclick="openLB(this.src)">
-<img src="Photo 6.JPG" onclick="openLB(this.src)">
-<img src="Photo 7.jpg" onclick="openLB(this.src)">
-<img src="Photo 8.JPG" onclick="openLB(this.src)">
-<img src="Photo 9.JPEG" onclick="openLB(this.src)">
-<img src="Photo 10.JPG" onclick="openLB(this.src)">
+<img src="./Photo 1.jpg" onerror="this.src='https://via.placeholder.com/400'" onclick="openFile(this.src)">
+<img src="./Photo 2.JPG" onerror="this.src='https://via.placeholder.com/400'" onclick="openFile(this.src)">
+<img src="Photo 3.JPG" onclick="openFile(this.src)">
+<img src="Photo 4.jpg" onclick="openFile(this.src)">
+<img src="Photo 5.JPG" onclick="openFile(this.src)">
+<img src="Photo 6.JPG" onclick="openFile(this.src)">
+<img src="Photo 7.jpg" onclick="openFile(this.src)">
+<img src="Photo 8.JPG" onclick="openFile(this.src)">
+<img src="Photo 9.JPEG" onclick="openFile(this.src)">
+<img src="Photo 10.JPG" onclick="openFile(this.src)">
 </div>
-<p><a href="Photoshoot_Calander.pdf" target="_blank">View Photoshoot Calendar</a></p>
-</section>
 
-<section>
-<h2>Films</h2>
-<div class="fade">
-<a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">Main Channel</a><br>
-<a href="https://youtu.be/L_6aET73AFY" target="_blank">Yakshaprashna</a><br>
-<a href="https://youtu.be/MTrPs2Vs6Y8" target="_blank">Caged</a><br>
-<a href="https://youtu.be/Mt5P1a5Fcb8" target="_blank">Sakha Twameva</a><br>
-<a href="https://youtu.be/ARitORMdvNY" target="_blank">Quagmire</a>
+<h2 style="margin-top:60px">Films</h2>
+<div class="grid fade">
+<div class="card" onclick="openVideo('https://www.youtube.com/embed/L_6aET73AFY')"><img src="https://img.youtube.com/vi/L_6aET73AFY/0.jpg"><div class="card-label">Yakshaprashna</div></div>
+<div class="card" onclick="openVideo('https://www.youtube.com/embed/MTrPs2Vs6Y8')"><img src="https://img.youtube.com/vi/MTrPs2Vs6Y8/0.jpg"><div class="card-label">Caged</div></div>
+<div class="card" onclick="openVideo('https://www.youtube.com/embed/Mt5P1a5Fcb8')"><img src="https://img.youtube.com/vi/Mt5P1a5Fcb8/0.jpg"><div class="card-label">Sakha Twameva</div></div>
+<div class="card" onclick="openVideo('https://www.youtube.com/embed/ARitORMdvNY')"><img src="https://img.youtube.com/vi/ARitORMdvNY/0.jpg"><div class="card-label">Quagmire</div></div>
 </div>
 </section>
 
-<section>
-<h2>Resume</h2>
-<p class="fade">Detailed breakdown of projects and experience.</p>
-<a href="Rahul_Mukherjee_Resume.pdf" target="_blank">Open Resume</a>
+<section id="links">
+<h2>External Links</h2>
+<p class="fade">
+<a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">YouTube</a><br>
+<a href="https://www.instagram.com/photomoshai" target="_blank">Instagram</a><br>
+<a href="https://www.linkedin.com/in/rahul-mukherjee1995/" target="_blank">LinkedIn</a>
+</p>
 </section>
 
-<div class="lightbox" id="lb" onclick="this.style.display='none'"><img id="lbimg"></div>
+<div class="lightbox" id="lb" onclick="closeLB()"></div>
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
+// fade animation
 gsap.utils.toArray('.fade').forEach(el=>{
-gsap.fromTo(el,{opacity:0,y:50},{opacity:1,y:0,duration:1,scrollTrigger:{trigger:el,start:"top 85%"}})
-})
+  gsap.fromTo(el,{opacity:0,y:50},{opacity:1,y:0,duration:0.9,ease:'power2.out',
+    scrollTrigger:{trigger:el,start:"top 85%"}
+  });
+});
 
-function openLB(src){
-document.getElementById('lb').style.display='flex';
-document.getElementById('lbimg').src=src;
+// grid animation (no syntax error now)
+gsap.utils.toArray('.grid').forEach(grid=>{
+  const items = grid.querySelectorAll('.card');
+  gsap.from(items,{
+    opacity:0,
+    y:60,
+    scale:0.96,
+    duration:0.8,
+    ease:'power2.out',
+    scrollTrigger:{
+      trigger:grid,
+      start:"top 85%"
+    }
+  });
+});
+
+// gallery animation (fixed braces)
+gsap.utils.toArray('.gallery').forEach(gal=>{
+  const imgs = gal.querySelectorAll('img');
+  gsap.from(imgs,{
+    opacity:0,
+    y:40,
+    duration:0.7,
+    ease:'power2.out',
+    scrollTrigger:{
+      trigger:gal,
+      start:"top 85%"
+    }
+  });
+});
+
+function openFile(src){
+  let lb=document.getElementById('lb');
+  lb.style.display='flex';
+  lb.innerHTML=`<img src="${src}">`;
 }
+
+function openVideo(url){
+  let lb=document.getElementById('lb');
+  lb.style.display='flex';
+  lb.innerHTML=`<iframe width="900" height="500" src="${url}" frameborder="0" allowfullscreen></iframe>`;
+}
+
+function closeLB(){document.getElementById('lb').style.display='none';}
 </script>
 
 </body>
