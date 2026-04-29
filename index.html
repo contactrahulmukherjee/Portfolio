@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Mukherjee</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.nav-card {
+    padding: 15px 30px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-card:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.gallery {
+    column-count: 3;
+    column-gap: 12px;
+}
+
+.gallery img {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.videos iframe {
+    width: 300px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.links a {
+    display: block;
+    margin: 10px 0;
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Rahul Mukherjee</h1>
+    <p>Project Manager | Filmmaker | Photographer</p>
+</header>
+
+<nav>
+    <div class="nav-card" onclick="scrollToSection('resume')">Resume</div>
+    <div class="nav-card" onclick="scrollToSection('portfolio')">Portfolio</div>
+    <div class="nav-card" onclick="scrollToSection('links')">External Links</div>
+</nav>
+
+<section id="resume">
+    <h2>Resume</h2>
+
+    <p>
+        Project Manager with 4+ years experience delivering large-scale programs across supply chain, retail and technology.
+        Led global traceability initiatives covering 26M+ units and improved vendor onboarding success to ~80%.
+    </p>
+
+    <a href="assets/Rahul_Mukherjee_Resume.pdf" target="_blank" class="btn">
+        View Full Resume
+    </a>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+
+    <h3>Photography</h3>
+
+    <div class="gallery" id="photoGallery"></div>
+
+    <a href="assets/Photoshoot_Calendar.pdf" target="_blank" class="btn">
+        View Photoshoot Calendar
+    </a>
+
+    <h3>Films</h3>
+
+    <div class="videos">
+        <iframe src="https://www.youtube.com/embed/L_6aET73AFY"></iframe>
+        <iframe src="https://www.youtube.com/embed/MTrPs2Vs6Y8"></iframe>
+        <iframe src="https://www.youtube.com/embed/Mt5P1a5Fcb8"></iframe>
+        <iframe src="https://www.youtube.com/embed/ARitORMdvNY"></iframe>
+    </div>
+</section>
+
+<section id="links">
+    <h2>External Links</h2>
+
+    <div class="links">
+        <a href="https://www.youtube.com/@RahulMukherjeeDirection" target="_blank">YouTube Channel</a>
+        <a href="https://www.linkedin.com/in/rahul-mukherjee1995/" target="_blank">LinkedIn</a>
+    </div>
+</section>
+
+<footer>
+    <p>© Rahul Mukherjee</p>
+</footer>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+/* AUTO LOAD MULTIPLE PHOTOS */
+const gallery = document.getElementById("photoGallery");
+
+/* Add your images here */
+const images = [
+    "assets/photo1.jpg",
+    "assets/photo2.jpg",
+    "assets/photo3.jpg",
+    "assets/photo4.jpg",
+    "assets/photo5.jpg",
+    "assets/photo6.jpg",
+    "assets/photo7.jpg",
+    "assets/photo8.jpg",
+    "assets/photo9.jpg",
+    "assets/photo10.jpg"
+];
+
+images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    gallery.appendChild(img);
+});
+</script>
+
+</body>
+</html>
